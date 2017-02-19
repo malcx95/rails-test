@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'index#Welcome'
 
-  get 'index' => 'index#Welcome'
   get 'kebab' => 'index#Welcome'
+
+  get 'users' => 'users#index'
+
+  # post 'users/create' => 'users#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
