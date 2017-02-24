@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  root 'index#Welcome'
+  resources :users
+  resources :messages
 
-  get 'kebab' => 'index#Welcome'
+  root 'index#index'
 
-  get 'users' => 'users#index'
+
+  # get 'users' => 'users#index'
+
+  # get 'users/new' => 'users#new'
 
   # post 'users/create' => 'users#create'
 

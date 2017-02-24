@@ -6,5 +6,6 @@ require 'date'
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Message.create(body: "Hajhaj",
-               created_at: DateTime.new(2017, 2, 3, 4))
+
+User.create(name: "Shitty User", password: "notpassword", 
+            created_at: DateTime.new(2017, 2, 3, 4))

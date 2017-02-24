@@ -1,0 +1,21 @@
+= form_for(@user) do |f|
+  - if @user.errors.any?
+    .error
+      h2 Error
+      p You dun fuck'd up son:
+      ul
+        - @user.errors.full_messages.each do |m|
+          li = m
+
+  .field
+    = f.label :name
+    br
+    = f.text_field :name
+    br
+    = f.label :password
+    br
+    = f.password_field :password
+    br
+  = f.submit
+
+

@@ -1,5 +1,4 @@
 class IndexController < ApplicationController
-  def Welcome
-
+  def index 
   end
 end

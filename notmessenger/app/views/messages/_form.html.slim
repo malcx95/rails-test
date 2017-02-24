@@ -1,0 +1,13 @@
+= form_for(@new_message) do |f|
+  .message_field
+    = f.label "Text"
+    br
+    = f.text_field :body
+    br
+    = f.label "User"
+    br
+    = f.collection_select :user_id, User.all, :id, :name
+    br
+    br
+  = f.submit "SEND"
+

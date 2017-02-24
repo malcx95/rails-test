@@ -1,14 +1,21 @@
 h1 Users
 
-table style="width:50%"
+p = notice
+
+table
     tr
       th Username
       th ID 
-    - @users.each do |u|
-      tr
-        td
-          = user.name
-        td
-          = user.id
-      
+      - @users.each do |u|
+        tr
+          td
+            center = u.name
+          td
+            center = u.id
+          td = link_to 'Delete', u, method: :delete
+
+= link_to "New user", new_user_path
+br
+= link_to "Back", :controller => 'index',
+  :action => 'index'
 
