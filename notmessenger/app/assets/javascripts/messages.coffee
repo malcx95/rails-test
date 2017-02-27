@@ -4,11 +4,11 @@
 
 renderMessages = (messages) ->
     for m in messages
-        message = "<div class='message'>"
-        message += "#{m.user}<br>"
-        message += "#{m.body}<br><br>"
-        message += "</div>"
-        hejhej = $("#messages").append -> message
+        message = "<div class='message_user'>"
+        message += "#{m.user}<br></div>"
+        message += "<div class='message_body'>"
+        message += "#{m.body}<br><br></div>"
+        $("#messages").append -> message
 
 
 requestMessages = (url) ->

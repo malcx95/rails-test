@@ -26,8 +26,8 @@ class MessagesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { render json: messages, status: :created, location: "yolo"  }
-      format.json { render json: messages, status: :created, location: "yolo" }
+      format.html { render json: messages }
+      format.json { render json: messages }
     end
   end
   
