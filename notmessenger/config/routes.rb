@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'index#index'
 
+  get "all_messages" => 'messages#get_messages', as: :get_messages
 
   # get 'users' => 'users#index'
 

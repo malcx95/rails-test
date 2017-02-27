@@ -1,14 +1,39 @@
 h1 Messages
 
-- @messages.each do |m|
-  .message
-      .message_user = m.user.name
-        br
-      .message_body = m.body
-  br
+span id="errorout"
+
+span id="messages"
+  /- @messages.each do |m|
+    .message
+        .message_user = m.user.name
+          br
+        .message_body = m.body
+    br
 
 h2 New message
 
 = render 'form'
 
 = link_to "Back", :controller => 'index', :action => 'index'
+
+javascript:
+  url = "#{get_messages_path}"
+
+coffee:
+  update = ->
+    message_handler(url)
+  update()
+  setInterval(update, 1000)
+
+  $('form').submit () ->
+      valuesToSubmit = $(this).serialize()
+      $.ajax
+          type: "POST",
+          url: $(this).attr('action'),
+          data: valuesToSubmit,
+          dataType: "JSON"
+      
+      update()
+      return false
+  
+
